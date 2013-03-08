@@ -1,28 +1,25 @@
 {
     "name": "doctrine/migrations",
-    "type": "library",
-    "description": "Database Schema migrations using Doctrine DBAL",
-    "keywords": ["migrations", "database"],
-    "homepage": "http://www.doctrine-project.org",
-    "license": "LGPL",
-    "authors": [
-        {"name": "Benjamin Eberlei", "email": "kontakt@beberlei.de"},
-        {"name": "Jonathan Wage", "email": "jonwage@gmail.com"}
-    ],
+    "description": "Doctrine Database Migrations Library",
     "require": {
-        "php": ">=5.3.2",
-        "doctrine/dbal": ">=2.0,<2.5.x-dev"
+        "doctrine/common": "2.4.x-dev",
+        "doctrine/dbal": "2.4.x-dev",
+        "doctrine/mongodb": "1.1.x-dev",
+        "symfony/finder": "2.2.*-dev"
     },
     "require-dev": {
         "symfony/console": "2.*",
         "symfony/yaml": "2.*"
     },
-    "suggest": {
-        "symfony/console": "to run the migration from the console"
-    },
+    "authors": [
+        {
+            "name": "Jonathan H. Wage",
+            "email": "jonwage@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-0": {
-            "Doctrine\\DBAL\\Migrations": "lib"
+            "Doctrine\\Migrations": "lib"
         }
     }
 }

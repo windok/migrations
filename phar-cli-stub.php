@@ -28,6 +28,12 @@ $classLoader->register();
 $classLoader = new \Doctrine\Common\ClassLoader('Doctrine\DBAL', 'phar://'.__FILE__);
 $classLoader->register();
 
+$classLoader = new \Doctrine\Common\ClassLoader('Doctrine\Migrations', 'phar://'.__FILE__);
+$classLoader->register();
+
+$classLoader = new \Doctrine\Common\ClassLoader('Doctrine\MongoDB', 'phar://'.__FILE__);
+$classLoader->register();
+
 $classLoader = new \Doctrine\Common\ClassLoader('Symfony', 'phar://'.__FILE__);
 $classLoader->register();
 
@@ -55,20 +61,17 @@ if (file_exists($configFile)) {
 $helperSet = ($helperSet) ?: new \Symfony\Component\Console\Helper\HelperSet();
 $helperSet->set(new \Symfony\Component\Console\Helper\DialogHelper(), 'dialog');
 
-$cli = new \Symfony\Component\Console\Application('Doctrine Migrations', \Doctrine\DBAL\Migrations\MigrationsVersion::VERSION);
+$cli = new \Symfony\Component\Console\Application('Doctrine Migrations', \Doctrine\Migrations\MigrationsVersion::VERSION);
 $cli->setCatchExceptions(true);
 $cli->setHelperSet($helperSet);
 $cli->addCommands(array(
     // Migrations Commands
-    new \Doctrine\DBAL\Migrations\Tools\Console\Command\ExecuteCommand(),
-    new \Doctrine\DBAL\Migrations\Tools\Console\Command\GenerateCommand(),
-    new \Doctrine\DBAL\Migrations\Tools\Console\Command\MigrateCommand(),
-    new \Doctrine\DBAL\Migrations\Tools\Console\Command\StatusCommand(),
-    new \Doctrine\DBAL\Migrations\Tools\Console\Command\VersionCommand()
+    new \Doctrine\Migrations\Tools\Console\Command\ExecuteCommand(),
+    new \Doctrine\Migrations\Tools\Console\Command\GenerateCommand(),
+    new \Doctrine\Migrations\Tools\Console\Command\MigrateCommand(),
+    new \Doctrine\Migrations\Tools\Console\Command\StatusCommand(),
+    new \Doctrine\Migrations\Tools\Console\Command\VersionCommand()
 ));
-if ($helperSet->has('em')) {
-    $cli->add(new \Doctrine\DBAL\Migrations\Tools\Console\Command\DiffCommand());
-}
 
 $input = file_exists('migrations-input.php')
        ? include('migrations-input.php')

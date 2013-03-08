@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-migrations xmlns="http://doctrine-project.org/schemas/migrations/configuration"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://doctrine-project.org/schemas/migrations/configuration
+                    http://doctrine-project.org/schemas/migrations/configuration.xsd">
+
+    <name>Doctrine Migrations Library Test</name>
+    <migrations-namespace>DoctrineMigrationsTest</migrations-namespace>
+    <migrations-directory>/path/to/migrations/classes/DoctrineMigrations</migrations-directory>
+    <bootstrap-file>bootstrap.php</bootstrap-file>
+
+</doctrine-migrations>

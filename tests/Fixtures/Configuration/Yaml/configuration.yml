@@ -1,0 +1,5 @@
+---
+name: Doctrine Migrations Library Test
+migrations_namespace: DoctrineMigrationsTest
+migrations_directory: /path/to/migrations/classes/DoctrineMigrations
+bootstrap_file: bootstrap.php
