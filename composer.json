@@ -9,6 +9,12 @@
         {"name": "Benjamin Eberlei", "email": "kontakt@beberlei.de"},
         {"name": "Jonathan Wage", "email": "jonwage@gmail.com"}
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/windok/dbal"
+        }
+    ],
     "require": {
         "php": ">=5.4.0",
         "windok/dbal": "~2.2",
