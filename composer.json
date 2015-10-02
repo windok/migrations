@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "doctrine/dbal": "~2.2",
+        "windok/dbal": "~2.2",
         "symfony/yaml": "~2.3",
         "symfony/console": "~2.3"
     },
